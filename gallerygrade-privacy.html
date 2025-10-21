@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GalleryGrade Privacy Policy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* Animated background shapes */
+        .bg-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape1 {
+            width: 300px;
+            height: 300px;
+            top: -150px;
+            left: -150px;
+            animation-delay: 0s;
+        }
+
+        .shape2 {
+            width: 200px;
+            height: 200px;
+            bottom: -100px;
+            right: -100px;
+            animation-delay: 5s;
+        }
+
+        .shape3 {
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            right: 10%;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            33% {
+                transform: translateY(-30px) rotate(120deg);
+            }
+            66% {
+                transform: translateY(30px) rotate(240deg);
+            }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .logo svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        h1 {
+            color: #2d3748;
+            font-size: 36px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .last-updated {
+            color: #718096;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.8s ease-out;
+            animation-delay: 0.1s;
+            animation-fill-mode: both;
+        }
+
+        h2 {
+            color: #2d3748;
+            font-size: 24px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #4a5568;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        p {
+            color: #4a5568;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin: 15px 0 20px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        li {
+            color: #4a5568;
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-weight: 500;
+            color: #2d3748;
+        }
+
+        a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        .email-contact {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            margin: 10px 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .email-contact:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            z-index: 10;
+        }
+
+        .back-to-top:hover {
+            transform: scale(1.1);
+        }
+
+        .back-to-top svg {
+            width: 20px;
+            height: 20px;
+            fill: #667eea;
+        }
+
+        @media (max-width: 640px) {
+            .content {
+                padding: 30px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            .header {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated background shapes -->
+    <div class="bg-shapes">
+        <div class="bg-shape shape1"></div>
+        <div class="bg-shape shape2"></div>
+        <div class="bg-shape shape3"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 2.18l8 4v9.82c0 4.28-2.88 8.24-7 9.34V4.18z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                </svg>
+            </div>
+            <h1>GalleryGrade Privacy Policy</h1>
+            <p class="last-updated">Last Updated: October 2025</p>
+        </div>
+
+        <div class="content">
+            <h2>Your Privacy Matters</h2>
+            <p>At GalleryGrade, we believe in keeping things simple and transparent. Our app helps you find your best photos using AI analysis, and we've designed it with your privacy in mind.</p>
+
+            <h2>The Basics: What We Do (and Don't Do)</h2>
+            <div class="highlight-box">
+                <p><strong>The good news:</strong> We don't store your photos. When you select a photo for analysis, it's sent securely to OpenAI for scoring, then immediately deleted. We don't keep copies, and we don't build profiles about you.</p>
+            </div>
+
+            <h2>How Your Photos Are Handled</h2>
+            <p>When you choose photos to analyze:</p>
+            <ul>
+                <li>They're encrypted and sent directly to OpenAI's API for analysis</li>
+                <li>You receive your scores and explanations instantly</li>
+                <li>The photos are automatically deleted after processing</li>
+                <li>We never store or backup your images</li>
+            </ul>
+
+            <h2>Information That Stays on Your Device</h2>
+            <p>Your analysis history and app settings remain private on your iPhone, protected by iOS security. This includes:</p>
+            <ul>
+                <li>Your photo scores and analysis results</li>
+                <li>App preferences and settings</li>
+                <li>Usage tracking for your subscription limits</li>
+            </ul>
+
+            <h2>Subscription Management</h2>
+            <p>Your subscription is handled entirely through Apple's App Store. We simply verify your subscription status to unlock premium features. All payment information stays with Apple—we never see it.</p>
+
+            <h2>Technical Details We Track</h2>
+            <p>To keep the app running smoothly and enforce subscription limits, we track:</p>
+            <ul>
+                <li>How many photos you've analyzed (for subscription tiers)</li>
+                <li>Basic app diagnostics (app version, iOS version)</li>
+                <li>Subscription status verification</li>
+            </ul>
+            <p>This information is minimal and used only to provide you with the service you're paying for.</p>
+
+            <h2>Third-Party Services We Use</h2>
+            
+            <h3>OpenAI</h3>
+            <p>We partner with OpenAI to provide the AI analysis. When you analyze a photo:</p>
+            <ul>
+                <li>It's sent to OpenAI for processing only</li>
+                <li>OpenAI's privacy policy applies: <a href="https://openai.com/privacy/" target="_blank">https://openai.com/privacy/</a></li>
+                <li>Photos are not used for AI training or any other purpose</li>
+            </ul>
+
+            <h3>Cloudflare</h3>
+            <p>We use Cloudflare's infrastructure to securely route your requests. No personal data is stored—it simply helps deliver the service reliably.</p>
+
+            <h2>Your Control</h2>
+            <p>You're always in charge:</p>
+            <ul>
+                <li><strong>Photo Access:</strong> Control which photos the app can access in your iOS Settings</li>
+                <li><strong>Clear History:</strong> Delete your analysis history anytime within the app</li>
+                <li><strong>Subscription:</strong> Manage or cancel through your Apple ID settings</li>
+            </ul>
+
+            <h2>Data Security</h2>
+            <p>We take security seriously:</p>
+            <ul>
+                <li>All connections are encrypted with HTTPS</li>
+                <li>Request integrity is verified with HMAC signatures</li>
+                <li>Your device's built-in iOS security protects local data</li>
+            </ul>
+
+            <h2>Updates to This Policy</h2>
+            <p>If we make changes to how we handle your information, we'll update this policy and let you know through the app.</p>
+
+            <h2>Questions?</h2>
+            <p>We're here to help! Reach out at:</p>
+            <a href="mailto:boyaloxer@gmail.com" class="email-contact">boyaloxer@gmail.com</a>
+
+            <h2>Legal Compliance</h2>
+            <p>This policy complies with Apple App Store Guidelines, GDPR, and CCPA requirements.</p>
+
+            <div class="highlight-box" style="margin-top: 40px;">
+                <p><em>Effective October 2025</em></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 GalleryGrade. All rights reserved.</p>
+    </div>
+
+    <!-- Back to top button -->
+    <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 14l5-5 5 5"/>
+        </svg>
+    </div>
+
+    <script>
+        // Show/hide back to top button based on scroll
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.style.opacity = '1';
+                backToTop.style.pointerEvents = 'auto';
+            } else {
+                backToTop.style.opacity = '0';
+                backToTop.style.pointerEvents = 'none';
+            }
+        });
+
+        // Initialize back to top button
+        document.querySelector('.back-to-top').style.opacity = '0';
+        document.querySelector('.back-to-top').style.transition = 'opacity 0.3s ease';
+    </script>
+</body>
+</html>
